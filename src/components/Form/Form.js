@@ -3,11 +3,12 @@ import { Formik, Form, Field } from 'formik';
 
 import styled from 'styled-components';
 
-import { Label } from './Form.styled';
+import { Label, Btn } from './Form.styled';
 
 
 const initialValues = {
     name: '',
+    number: ''
 };
 
 const Input = styled(Field)`
@@ -38,7 +39,18 @@ export const FormLabel = () => {
                 />
                 </Label>
                 
-                <button type="submit">Submit</button>
+                <Label htmlFor="Number">
+                    Number
+                    <Input
+                    type="text"
+                    name="number"
+                    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                    title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+
+                    required
+                />
+                </Label>
+                <Btn type="submit">Add contact</Btn>
             </Form>
         </Formik>
     )
