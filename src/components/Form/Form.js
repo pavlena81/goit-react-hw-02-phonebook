@@ -4,7 +4,7 @@ import { Formik, Form, Field } from 'formik';
 import styled from 'styled-components';
 
 import { Label, Btn } from './Form.styled';
-import { nanoid } from "nanoid";
+
 
 const initialValues = {
     name: '',
@@ -18,13 +18,13 @@ margin: 10px;
 border: 2px solid aqua;
 border-radius: 2px;
 `
-export const FormLabel = () => {
-    const handleSubmit = (values, {resetForm}) => {
-        console.log(values);
-        values.id = nanoid();
-        
-        resetForm();
-}
+export const FormLabel = ({ handleSubmit }) => {
+//     // const handleSubmit = (value, {resetForm}) => {
+//     //     console.log(value);
+//     //     // onSubmit(value)
+                
+//     //     resetForm();
+// }
 
     return (
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>

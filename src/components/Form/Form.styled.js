@@ -5,6 +5,7 @@ display: flex;
 
 flex-direction: column;
 padding:10px;
+padding-top: 20px;
 `
 
 export const Btn = styled.button`
