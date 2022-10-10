@@ -11,11 +11,11 @@ padding-top: 20px;
 export const Btn = styled.button`
     font-size: 16px;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
-
+    background-color: #D6EAF8;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
+    
     cursor: pointer;
     outline: none;
     
@@ -23,6 +23,6 @@ export const Btn = styled.button`
     background-color: #2EE59D;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
-    transform: translateY(-7px);
+    
     }
 `

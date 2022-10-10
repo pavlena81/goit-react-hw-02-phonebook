@@ -1,8 +1,10 @@
+import Notiflix from 'notiflix';
 import { FormLabel } from './Form/Form';
 import { Filter } from './Filter/Filter';
 import { FormContacts } from './Contacts/Contacts';
 import { Component } from 'react';
 import { nanoid } from "nanoid";
+import { Container, Box } from './App.styled';
 
 export class App extends Component {
 
@@ -27,11 +29,14 @@ export class App extends Component {
       name,
       number,
     };
-
-     this.setState(({ contacts }) => ({
+     if (this.state.contacts
+       .filter(contact => contact.name.toLowerCase() === name)) {
+        return Notiflix.Notify.info('Contacts is already in list-contacts');
+     } 
+      this.setState(({ contacts }) => ({
        contacts: [contact, ...contacts],
-     }));
-     console.log('hello')
+     }))
+          
      console.log(this.state.contacts)
   }
 
@@ -63,17 +68,8 @@ export class App extends Component {
   render() {
     
     return (
-    <div
-      style={{
-        height: '150vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 20,
-        color: '#010101'
-      }}
-    >
+     <Box>
+    <Container >
       <h1>Phonebook</h1> 
         <FormLabel handleSubmit={this.handleSubmit} />
 
@@ -81,7 +77,8 @@ export class App extends Component {
         <Filter filter={this.filter} filterContact={this.filterContact} />
          <FormContacts contacts={this.findContacts()}
                       deleteContact={this.deleteContact}   />       
-    </div>
+        </Container>
+        </Box> 
   );
 }
 }

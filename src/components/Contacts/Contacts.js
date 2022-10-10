@@ -11,7 +11,7 @@ export const FormContacts = ({ contacts, deleteContact }) => {
         
         return (
           <ItemContacts key={id}>
-            {name}: {number}
+            {name}:     {number}
             <Btn type="button" onClick={() => deleteContact(id)}>
               Delete
             </Btn>

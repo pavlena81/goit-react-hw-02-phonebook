@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import PropTypes from 'prop-types';
-import { Label } from '../Form/Form.styled';
+import { Label, Input } from './Filter.styled';
 
 
 
@@ -12,7 +12,7 @@ export const Filter = ({ filter, filterContact }) => {
   return (
     <Label>
       Find contacts by name
-      <input
+      <Input
         type="text"
         name="filter"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -26,5 +26,6 @@ export const Filter = ({ filter, filterContact }) => {
 };
 
 Label.propTypes = {
-  filter: PropTypes.string,
+    filter: PropTypes.string.isRequired,
+    filterContact: PropTypes.func.isRequired,
 };

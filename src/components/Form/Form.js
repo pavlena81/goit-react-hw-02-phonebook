@@ -15,15 +15,19 @@ const Input = styled(Field)`
 font-size: 18px;
 padding: 10px 15px;
 margin: 10px;
-border: 2px solid aqua;
+border: 2px solid #D4E6F1;
 border-radius: 2px;
+`
+const Forma = styled(Form)`
+padding: 20px;
+border: 1px solid #7FB3D5;
 `
 export const FormLabel = ({ handleSubmit }) => {
 
 
     return (
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-            <Form autoComplete='off'>
+            <Forma autoComplete='off'>
                 <Label htmlFor="Name">
                     Name
                     <Input
@@ -47,7 +51,7 @@ export const FormLabel = ({ handleSubmit }) => {
                 />
                 </Label>
                 <Btn type="submit">Add contact</Btn>
-            </Form>
+            </Forma>
         </Formik>
     )
 }
