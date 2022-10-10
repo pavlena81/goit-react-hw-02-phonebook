@@ -1,4 +1,4 @@
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { FormLabel } from './Form/Form';
 import { Filter } from './Filter/Filter';
 import { FormContacts } from './Contacts/Contacts';
@@ -29,9 +29,10 @@ export class App extends Component {
       name,
       number,
     };
-     if (this.state.contacts
-       .filter(contact => contact.name.toLowerCase() === name)) {
-        return Notiflix.Notify.info('Contacts is already in list-contacts');
+     
+     if (this.state.contacts.filter(contact => contact.name.toLowerCase() === name)) {
+      return Notify.info('Contacts is already in list-contacts');
+       
      } 
       this.setState(({ contacts }) => ({
        contacts: [contact, ...contacts],
