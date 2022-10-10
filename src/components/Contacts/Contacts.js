@@ -2,7 +2,7 @@
 
 import { ListContacts, ItemContacts, Btn } from './Contacts.styled';
 
-export const FormContacts = ({ contacts, onDelete }) => {
+export const FormContacts = ({ contacts, deleteContact }) => {
   console.log(contacts)
   return (
     < ListContacts >
@@ -12,7 +12,7 @@ export const FormContacts = ({ contacts, onDelete }) => {
         return (
           <ItemContacts key={id}>
             {name}: {number}
-            <Btn type="button" onClick={() => onDelete(id)}>
+            <Btn type="button" onClick={() => deleteContact(id)}>
               Delete
             </Btn>
           </ItemContacts>
@@ -29,7 +29,8 @@ FormContacts.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      onDelete: PropTypes.number.isRequired,
+      number: PropTypes.number.isRequired,
     })
-  ).isRequired     
+  ).isRequired,
+    deleteContact: PropTypes.func.isRequired,
 };

@@ -3,7 +3,7 @@ import { Formik, Form, Field } from 'formik';
 
 import styled from 'styled-components';
 
-import { Label, Btn } from './Form.styled';
+import { Label, Btn, } from './Form.styled';
 
 
 const initialValues = {
@@ -19,12 +19,7 @@ border: 2px solid aqua;
 border-radius: 2px;
 `
 export const FormLabel = ({ handleSubmit }) => {
-//     // const handleSubmit = (value, {resetForm}) => {
-//     //     console.log(value);
-//     //     // onSubmit(value)
-                
-//     //     resetForm();
-// }
+
 
     return (
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
