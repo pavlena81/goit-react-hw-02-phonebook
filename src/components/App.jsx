@@ -30,10 +30,11 @@ export class App extends Component {
       number,
     };
      
-     if (this.state.contacts.filter(contact => contact.name.toLowerCase() === name)) {
-      return Notify.info('Contacts is already in list-contacts');
-       
+      if (this.state.contacts.filter(contact => contact.name.toLowerCase() === name.toLowerCase()).length>0){
+      return Notify.info('Contacts is already in list-contacts');  
+       console.log(name)
      } 
+     
       this.setState(({ contacts }) => ({
        contacts: [contact, ...contacts],
      }))
